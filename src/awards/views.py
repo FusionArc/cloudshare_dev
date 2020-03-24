@@ -8,3 +8,11 @@ def award_list(request):
         'award_list': awards
     }
     return render(request, 'awards/award_list.html', context)
+
+
+def award_detail(request, id):
+    award   = Award.objects.get(id=id)
+    context = {
+        'award': award
+    }
+    return render(request, 'award_detail.html', context)

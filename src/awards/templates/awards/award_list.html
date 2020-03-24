@@ -1,7 +1,10 @@
-<h2>Awards Page</h2>
+{% extends 'awards/base.html' %}
 
+{% block content %}
+<h2>Awards Page</h2>
 <ul>
     {% for award in award_list %}
         <li>{{ award }}</li>
     {% endfor %}
 </ul>
+{% endblock content %}
