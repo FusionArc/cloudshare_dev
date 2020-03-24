@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" type="text/css" href="{% static 'awards/styles.css' %}">
+
+    {% if title %}
+        <title>CloudShare - {{ title }}</title>
+    {% else %}
+        <title>CloudShare.Space</title>
+    {% endif %}
+</head>
+<body>
+    {% block content %}{% endblock content %}
+</body>
+</html>
