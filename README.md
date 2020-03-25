@@ -1,6 +1,6 @@
 # cloudshare_dev
-Web Application codebase for cloudshare.space
-Built with Django 3.04 and Python 3.8
+Web Application codebase for cloudshare.space.
+Built with Django 3.04 and Python 3.8.
 This application is to perform as a repository/gallery for User Awards, Achievements and Certificates.
 Where each individual User account will be a showcase of their own certificates and achievements accuired 
 throughout their careeer. 
