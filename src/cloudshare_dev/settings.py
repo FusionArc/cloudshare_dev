@@ -13,6 +13,8 @@ INSTALLED_APPS = (
     'allauth',
     'allauth.account',
     'allauth.socialaccount',
+    'awards.apps.AwardsConfig',
+    'core.apps.CoreConfig',
     'crispy_forms',
     'django.contrib.admin',
     'django.contrib.auth',
@@ -21,8 +23,6 @@ INSTALLED_APPS = (
     'django.contrib.sites',
     'django.contrib.sessions',
     'django.contrib.staticfiles',
-
-    'awards'
 )
 
 MIDDLEWARE = [
