@@ -18,4 +18,8 @@ const navSlide = () => {
     });
 }
 
-navSlide();
+const renderPage = () => {
+    navSlide();
+}
+
+renderPage()
