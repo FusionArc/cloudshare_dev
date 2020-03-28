@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/css?family=Roboto+Slab&display=swap" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="{% static 'awards/styles.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'core/styles.css' %}">
 
     {% if title %}
         <title>CloudShare - {{ title }}</title>
@@ -16,7 +16,7 @@
 <body>
     <nav>
         <div class="logo">
-            <h4>The Nav</h4>
+            <h4>CloudShare</h4>
         </div>
         <ul class="nav-links">
             <li>
@@ -38,8 +38,45 @@
             <div class="line3"></div>
         </div>
     </nav>
-    {% block content %}{% endblock content %}
-    
-    <script src="{% static 'awards/app.js' %}"></script>
+    <main>
+        {% block body %}
+        
+        <div class="auth">
+            <ul class="auth-links">
+              {% if user.is_authenticated %}
+                <!-- <li><a href="{% url 'account_email' %}">Change E-mail</a></li> -->
+                <li><a href="{% url 'account_logout' %}">Log Out</a></li>
+              {% else %}
+                <li><a href="{% url 'account_login' %}">Log In</a></li>
+                <li><a href="{% url 'account_signup' %}">Register</a></li>
+              {% endif %}
+            </ul>
+        </div>
+
+        {% if messages %}
+        <div>
+          <ul>
+            {% for message in messages %}
+              <li>{{message}}</li>
+            {% endfor %}
+          </ul>
+        </div>
+        {% endif %}
+
+        <div class="container">
+          {% block content %}
+          {% endblock content %}
+        </div>
+  
+        {% endblock body %}
+        <section>
+            {% block extra_body %}
+            {% endblock extra_body%}
+          </section>
+      </main>
+      <footer>
+          <img src="{% static 'core/images/lestweforget_150.png' %}" alt="lest we forget icon">
+      </footer>
+    <script src="{% static 'core/app.js' %}"></script>
 </body>
 </html>
