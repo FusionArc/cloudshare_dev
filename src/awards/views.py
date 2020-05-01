@@ -3,7 +3,7 @@ from .models import Award
 
 
 def award_list(request):
-    awards  = Award.objects.all()
+    awards = Award.objects.all()
     context = {
         'award_list': awards
     }
@@ -11,7 +11,7 @@ def award_list(request):
 
 
 def award_detail(request, id):
-    award   = Award.objects.get(id=id)
+    award = Award.objects.get(id=id)
     context = {
         'award': award
     }
